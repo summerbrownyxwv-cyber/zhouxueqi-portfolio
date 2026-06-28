@@ -1013,12 +1013,15 @@ ul {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
   background: #000;
   color: #fff;
   opacity: 0;
   pointer-events: none;
+  padding: 2rem;
   transition: opacity 280ms var(--ease-soft);
 }
 
@@ -1028,8 +1031,12 @@ ul {
 }
 
 .copy-overlay p {
+  position: relative;
+  z-index: 1;
+  color: #fff;
   font-size: 1.35rem;
   line-height: 1;
+  text-align: center;
 }
 
 .page-transition {
@@ -1494,6 +1501,16 @@ ul {
   .project-foot {
     flex-direction: column;
     gap: 0.7rem;
+    align-items: flex-start;
+  }
+
+  .project-foot p {
+    flex: 0 1 auto;
+  }
+
+  .project-foot span,
+  .project-foot a {
+    flex: 0 0 auto;
   }
 
   .library-grid,
@@ -1570,13 +1587,18 @@ ul {
   }
 
   .email-grid {
-    gap: 2rem;
+    gap: 1.25rem;
     padding-top: 1rem;
   }
 
   .email-grid span,
   .email-copy-target {
-    font-size: 1.35rem;
+    font-size: clamp(1.05rem, 5.2vw, 1.18rem);
+    line-height: 1.25;
+  }
+
+  .copy-overlay p {
+    font-size: 1.12rem;
   }
 }
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { emailContent } from "../data/portfolioData.js";
 
 function fallbackCopyText(text) {
@@ -60,9 +61,12 @@ export default function EmailPage() {
           </button>
         ))}
       </div>
-      <div className={`copy-overlay ${copyState.active ? "is-active" : ""}`} aria-live="polite">
-        <p>{copyState.message}</p>
-      </div>
+      {createPortal(
+        <div className={`copy-overlay ${copyState.active ? "is-active" : ""}`} aria-live="polite">
+          <p>{copyState.message}</p>
+        </div>,
+        document.body,
+      )}
     </main>
   );
 }
