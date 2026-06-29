@@ -36,6 +36,14 @@ export default function RotatingText({
 }) {
   const reducedMotion = usePrefersReducedMotion();
   const safeItems = useMemo(() => items.filter(Boolean), [items]);
+  const stableText = useMemo(
+    () =>
+      safeItems.reduce((longest, item) => {
+        const candidate = `${item}${suffix}`;
+        return candidate.length > longest.length ? candidate : longest;
+      }, `${safeItems[0] ?? ""}${suffix}`),
+    [safeItems, suffix],
+  );
   const [activeIndex, setActiveIndex] = useState(0);
   const [displayText, setDisplayText] = useState(safeItems[0] ?? "");
   const timeouts = useRef([]);
@@ -90,6 +98,9 @@ export default function RotatingText({
       className={`rotating-text ${className}`.trim()}
       aria-label={`${ariaLabel}: ${safeItems[activeIndex]}${suffix}`}
     >
+      <span className="rotating-text__sizer" aria-hidden="true">
+        {stableText}
+      </span>
       <span className="rotating-text__text" aria-hidden="true">
         {displayText}
         {suffix}

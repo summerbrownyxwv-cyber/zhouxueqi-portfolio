@@ -188,10 +188,11 @@ ul {
 }
 
 .rotating-text {
+  position: relative;
   display: inline-block;
   width: auto;
   max-width: 100%;
-  min-height: 1em;
+  min-height: 0;
   height: auto;
   overflow: visible;
   color: var(--color-muted);
@@ -201,6 +202,7 @@ ul {
   vertical-align: baseline;
 }
 
+.rotating-text__sizer,
 .rotating-text__text {
   display: inline-block;
   width: auto;
@@ -208,6 +210,17 @@ ul {
   line-height: inherit;
   overflow: visible;
   padding-block: 0.02em;
+}
+
+.rotating-text__sizer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.rotating-text__text {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .home-hero h1 {
@@ -226,9 +239,10 @@ ul {
 
 .hero-title-identity {
   display: block;
+  position: relative;
   width: 100%;
   max-width: 100%;
-  min-height: 1.1em;
+  min-height: 0;
   height: auto;
   overflow: visible;
   color: var(--color-text);
@@ -238,9 +252,11 @@ ul {
   white-space: normal;
 }
 
+.hero-title-identity .rotating-text__sizer,
 .hero-title-identity .rotating-text__text {
-  display: inline-block;
-  width: auto;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-bottom {
@@ -1428,7 +1444,7 @@ ul {
 
   .hero-title-identity {
     width: 100%;
-    min-height: 1.1em;
+    min-height: 0;
     height: auto;
     font-size: inherit;
     overflow: visible;
