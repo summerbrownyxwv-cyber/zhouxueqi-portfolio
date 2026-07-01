@@ -2,6 +2,7 @@ import MouseReactiveBackground from "../components/interaction/MouseReactiveBack
 import RotatingText from "../components/interaction/RotatingText.jsx";
 import ProjectShowcase from "../components/ProjectShowcase.jsx";
 import SectionDivider from "../components/SectionDivider.jsx";
+import { getAssetDimensions } from "../data/assetDimensions.generated.js";
 import { competitionProjects, homeContent, siteMeta } from "../data/portfolioData.js";
 
 const identityTexts = [
@@ -15,12 +16,21 @@ const identityTexts = [
 export default function HomePage({ onNavigate }) {
   const titleParts = homeContent.hero.title.split("，");
   const introLines = homeContent.hero.introLines ?? [homeContent.hero.intro];
+  const smileDimensions = getAssetDimensions(siteMeta.smile);
 
   return (
     <main>
       <section className="home-hero page-frame">
         <MouseReactiveBackground className="home-ascii-background" />
-        <img className="smile-mark home-smile" src={siteMeta.smile} alt="笑脸图形" />
+        <img
+          className="smile-mark home-smile"
+          src={siteMeta.smile}
+          alt="笑脸图形"
+          width={smileDimensions?.width}
+          height={smileDimensions?.height}
+          decoding="async"
+          fetchPriority="high"
+        />
 
         <div className="hero-copy">
           <p className="eyebrow">
@@ -72,10 +82,13 @@ export default function HomePage({ onNavigate }) {
           <div className="reel-media">
             <video
               src={homeContent.reel.video}
+              poster={homeContent.reel.coverImage}
               aria-label={`${homeContent.reel.name}作品集短片`}
               controls
               playsInline
               preload="metadata"
+              width="1920"
+              height="1080"
             />
           </div>
 

@@ -195,9 +195,9 @@ export const competitionProjects = [
     detailPath: "assets/01-home-detail/Instagram story - 7",
     detailAssets: homeDetailSequence(7, 5, "webp").map((path, index) =>
       index === 0
-        ? asset("01-home-detail/共声-静态平面.png")
+        ? asset("01-home-detail/共声-静态平面.webp")
         : index === 3
-          ? asset("01-home-detail/Instagram story - 7-04.png")
+          ? asset("01-home-detail/Instagram story - 7-04.webp")
           : path,
     ),
     detailVideo: asset("01-home-detail/detail-gongsheng.audio-optimized.m4v"),
@@ -333,7 +333,7 @@ export const workProjects = [
     cover: asset("02-Work/02-work-part-05-02.webp"),
     image: asset("02-Work/02-work-part-05-02.webp"),
     imageNote: "品牌宣发主视觉大屏/海报场景图",
-    detailPath: "assets/02-work-detail/Instagram story - 18",
+    detailPath: "assets/02-work-detail/Instagram story - 18_optimized",
     detailAssets: [
       asset("02-Work/02-work-part-05-02.webp"),
       ...imageSequence("02-work-detail/Instagram story - 18_optimized", "page-", 2, 11),

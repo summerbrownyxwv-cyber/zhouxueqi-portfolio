@@ -1,3 +1,4 @@
+import { getAssetDimensions } from "../data/assetDimensions.generated.js";
 import { resumeContent, siteMeta } from "../data/portfolioData.js";
 
 function ResumeSection({ title, children }) {
@@ -26,9 +27,18 @@ function TimelineList({ items, compact = false }) {
 }
 
 export default function ResumePage() {
+  const smileDimensions = getAssetDimensions(siteMeta.smile);
+
   return (
     <main className="page-frame inner-page resume-page">
-      <img className="smile-mark resume-smile" src={siteMeta.smile} alt="笑脸图形" />
+      <img
+        className="smile-mark resume-smile"
+        src={siteMeta.smile}
+        alt="笑脸图形"
+        width={smileDimensions?.width}
+        height={smileDimensions?.height}
+        decoding="async"
+      />
 
       <section className="resume-hero" aria-labelledby="resume-name">
         <p>{resumeContent.name}</p>

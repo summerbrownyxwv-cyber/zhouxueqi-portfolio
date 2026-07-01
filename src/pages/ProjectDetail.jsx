@@ -8,7 +8,11 @@ function getProjectMedia(project) {
       : project.detailAssets;
 
   if (project.detailVideo) {
-    media.push({ type: "video", src: project.detailVideo });
+    media.push({
+      type: "video",
+      src: project.detailVideo,
+      poster: project.videoPoster || project.detailAssets[0] || project.image,
+    });
   }
 
   detailAssets.forEach((src) => {

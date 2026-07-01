@@ -1,7 +1,10 @@
+import { getAssetDimensions } from "../data/assetDimensions.generated.js";
+
 export default function ProjectShowcase({ project, variant = "competition", onNavigate }) {
   const isWork = variant === "work";
   const actionHref = project.externalUrl || project.route;
   const isExternal = Boolean(project.externalUrl);
+  const imageDimensions = getAssetDimensions(project.image);
 
   return (
     <article
@@ -40,7 +43,14 @@ export default function ProjectShowcase({ project, variant = "competition", onNa
       </header>
 
       <figure className="project-media">
-        <img src={project.image} alt={project.name} loading="lazy" />
+        <img
+          src={project.image}
+          alt={project.name}
+          loading="lazy"
+          decoding="async"
+          width={imageDimensions?.width}
+          height={imageDimensions?.height}
+        />
       </figure>
 
       <div className="project-card-meta project-foot">
