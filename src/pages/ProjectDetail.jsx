@@ -71,7 +71,12 @@ function ProjectHero({ project, backHref, onNavigate }) {
 }
 
 export default function ProjectDetailPage({ project, onNavigate }) {
-  const backHref = project.category === "01.竞赛项目" ? "/#competition" : "/work";
+  const backHref =
+    project.category === "01.竞赛项目"
+      ? "/#competition"
+      : project.category === "03.其他设计"
+        ? "/03-01"
+        : "/work";
   const { cover, gallery } = getProjectMedia(project);
 
   return (

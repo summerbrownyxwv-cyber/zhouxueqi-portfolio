@@ -649,6 +649,11 @@ ul {
   padding: 1.7rem;
 }
 
+.library-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .library-card-title,
 .library-card-tags {
   display: grid;

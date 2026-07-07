@@ -11,6 +11,9 @@ const homeDetailSequence = (storyNumber, end, extension = "webp") =>
 const workDetailSequence = (folderName, prefix, start, end) =>
   imageSequence(`02-work-detail/${folderName}`, prefix, start, end);
 
+const graphicAsset = (path) => asset(`03-replenish/03-01-graphic/${path}`);
+const graphicDetailAsset = (fileName) => graphicAsset(`03-01-detail/${fileName}`);
+
 const primaryNav = [
   { label: "01.竞赛项目", href: "/#competition" },
   { label: "02.落地项目", href: "/work" },
@@ -352,7 +355,100 @@ export const workProjects = [
   },
 ];
 
-export const projectDetailItems = [...competitionProjects, ...workProjects].filter(
+export const graphicPromotionContent = {
+  source: "03-replenish/03-01-graphic/03-01",
+  pageName: "03-01 / 平面宣传",
+  sectionTitle: "01.平面宣传",
+};
+
+export const graphicPromotionProjects = [
+  {
+    id: "huadengchushang-book",
+    title: "书籍设计",
+    name: "书籍设计",
+    englishName: "Book Design",
+    detailEnglishName: "Book Design",
+    subtitle: "沐凉灯笼张非遗书籍设计",
+    englishSubtitle:
+      "Book Design for the Intangible Cultural Heritage of Bianjing Lanterns by Zhang",
+    category: "03.其他设计",
+    year: "6周",
+    tags: ["书籍设计", "非遗设计"],
+    time: "制作时间：6周（团队协作）",
+    buttonText: "查看详情 >",
+    cover: graphicAsset("03-01/03-Library-02-02.webp"),
+    image: graphicAsset("03-01/03-Library-02-02.webp"),
+    imageNote: "沐凉灯笼张非遗书籍设计展示图",
+    detailPath: "assets/03-replenish/03-01-graphic/03-01-detail",
+    detailAssets: [
+      graphicDetailAsset("03-huadengchushang-detail-02.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-03.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-04.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-05.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-07.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-08.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-09.webp"),
+      graphicDetailAsset("03-huadengchushang-detail-10.webp"),
+    ],
+    detailVideo: null,
+    detailMeta: [
+      { label: "项目类型", value: "书籍设计 / 非遗设计" },
+      { label: "制作周期", value: "6周" },
+      { label: "项目形式", value: "团队协作" },
+      { label: "项目成果", value: "东方设计奖｜湖北省二等奖" },
+    ],
+    externalUrl: null,
+    type: "library",
+    route: "/03-01/huadengchushang",
+  },
+  {
+    id: "past-illustrations",
+    title: "插画设计",
+    name: "插画设计",
+    englishName: "Illustration Design",
+    detailEnglishName: "Illustration Design",
+    subtitle: "过往插画合集",
+    englishSubtitle: "Past Illustrations Collection",
+    category: "03.其他设计",
+    year: "2020-2026",
+    tags: ["板绘插画"],
+    time: "制作时间：2020-2026",
+    buttonText: "查看详情 >",
+    cover: graphicAsset("03-01/03-Library-03-02.webp"),
+    image: graphicAsset("03-01/03-Library-03-02.webp"),
+    imageNote: "过往插画合集展示图",
+    detailPath: "assets/03-replenish/03-01-graphic/03-01-detail",
+    detailAssets: [
+      graphicDetailAsset("03-illustration-detail-02.webp"),
+      graphicDetailAsset("03-illustration-detail-03.webp"),
+      graphicDetailAsset("03-illustration-detail-05.webp"),
+      graphicDetailAsset("03-illustration-detail-04.webp"),
+      graphicDetailAsset("03-illustration-detail-06.webp"),
+      graphicDetailAsset("03-illustration-detail-07.webp"),
+      graphicDetailAsset("03-illustration-detail-08.webp"),
+      graphicDetailAsset("03-illustration-detail-09.webp"),
+      graphicDetailAsset("03-illustration-detail-10.webp"),
+      graphicDetailAsset("03-illustration-detail-11.webp"),
+      graphicDetailAsset("03-illustration-detail-12.webp"),
+    ],
+    detailVideo: null,
+    detailMeta: [
+      { label: "项目类型", value: "板绘插画" },
+      { label: "制作周期", value: "2020-2026" },
+      { label: "项目形式", value: "独立制作" },
+      { label: "使用软件", value: "Procreate、PS、AI" },
+    ],
+    externalUrl: null,
+    type: "library",
+    route: "/03-01/illustration",
+  },
+];
+
+export const projectDetailItems = [
+  ...competitionProjects,
+  ...workProjects,
+  ...graphicPromotionProjects,
+].filter(
   (project) => project.route,
 );
 
@@ -386,7 +482,7 @@ export const libraryContent = {
         "围绕信息层级、版式节奏与视觉记忆点展开的平面设计练习，包含海报、书籍排版及宣传物料设计。",
       englishDescription:
         "A collection of graphic design works focusing on information hierarchy, typographic rhythm, and visual memorability, including posters, publications, and promotional materials.",
-      route: null,
+      route: "/03-01",
       detailAssets: [],
     },
     {

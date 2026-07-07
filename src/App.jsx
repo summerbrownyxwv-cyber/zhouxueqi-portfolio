@@ -3,6 +3,7 @@ import PageTransition from "./components/interaction/PageTransition.jsx";
 import RevealOnScroll from "./components/interaction/RevealOnScroll.jsx";
 import Shell from "./components/Shell.jsx";
 import EmailPage from "./pages/Email.jsx";
+import GraphicPromotionPage from "./pages/GraphicPromotion.jsx";
 import HomePage from "./pages/Home.jsx";
 import LibraryPage from "./pages/Library.jsx";
 import ProjectDetailPage from "./pages/ProjectDetail.jsx";
@@ -14,6 +15,7 @@ const routes = {
   "/": HomePage,
   "/work": WorkPage,
   "/library": LibraryPage,
+  "/03-01": GraphicPromotionPage,
   "/resume": ResumePage,
   "/email": EmailPage,
 };
