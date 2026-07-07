@@ -15,7 +15,7 @@ const graphicAsset = (path) => asset(`03-replenish/03-01-graphic/${path}`);
 const graphicDetailAsset = (fileName) => graphicAsset(`03-01-detail/${fileName}`);
 
 const primaryNav = [
-  { label: "01.竞赛项目", href: "/#competition" },
+  { label: "01.实践项目", href: "/#competition" },
   { label: "02.落地项目", href: "/work" },
   { label: "03.其他设计", href: "/library" },
   { label: "04.个人简历", href: "/resume" },
@@ -66,7 +66,7 @@ export const homeContent = {
     coverImage: asset("01-Home/01-Home-part-04-02.webp"),
     video: asset("01-home-detail/01-home-video-01.audio-optimized.mp4"),
   },
-  competitionTitle: "01.竞赛项目",
+  competitionTitle: "01.实践项目",
 };
 
 export const competitionProjects = [
@@ -80,7 +80,7 @@ export const competitionProjects = [
     subtitle: "融合五音疗疾的中草药香薰包装视听设计系统",
     englishSubtitle:
       "An audio-visual design of herbal aromatherapy packaging incorporating the five tones of healing",
-    category: "01.竞赛项目",
+    category: "01.实践项目",
     year: "8周",
     tags: ["品牌设计", "包装设计", "AR交互"],
     time: "制作时间：8周（独立创作、米兰设计周全国高校设计大赛｜全国一等奖）",
@@ -115,7 +115,7 @@ export const competitionProjects = [
     detailEnglishName: "Gather Wild",
     subtitle: "神农架野山珍品牌视觉形象设计",
     englishSubtitle: "Shennongjia Wild Mountain Treasures Brand Visual Image Design",
-    category: "01.竞赛项目",
+    category: "01.实践项目",
     year: "4周",
     tags: ["品牌视觉", "包装设计"],
     time: "制作时间：4周（独立创作、第三届中国研究生“美丽中国”创新设计大赛｜全国二等奖）",
@@ -151,7 +151,7 @@ export const competitionProjects = [
     subtitle: "土家族非遗X恩施蜂蜜品牌包装设计",
     englishSubtitle:
       "Tujia Intangible Cultural Heritage × Enshi Honey Brand Packaging Design",
-    category: "01.竞赛项目",
+    category: "01.实践项目",
     year: "8周",
     tags: ["非遗", "包装设计", "品牌设计"],
     time: "制作时间：8周（小组协作、好创意设计大赛｜全国二等奖）",
@@ -187,7 +187,7 @@ export const competitionProjects = [
     subtitle: "武汉东湖落雁景区声音信息可视化设计研究",
     englishSubtitle:
       "A Study on the Visualization Design of Audio Information at the Luoyan Scenic Area in Wuhan’s East Lake",
-    category: "01.竞赛项目",
+    category: "01.实践项目",
     year: "16周",
     tags: ["信息可视化", "声音设计", "视觉系统"],
     time: "制作时间：16周（独立创作、第三届全国大学生美术作品展作品）",
