@@ -39,7 +39,7 @@ export const homeContent = {
   pageName: "Home / 首页",
   hero: {
     eyebrow: "00.个人简介",
-    eyebrowEn: "Me facts",
+    eyebrowEn: "My Portfolio",
     title: "周雪琪，一位视觉设计师。",
     intro:
       "武汉纺织大学艺术设计研究生。求职方向：视觉设计/品牌设计，关注品牌系统与文化符号的视觉转化，相信好的设计要在「研究深度」与「感知温度」之间找到平衡。",

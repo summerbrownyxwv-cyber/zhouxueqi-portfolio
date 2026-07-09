@@ -394,6 +394,15 @@ ul {
   font-weight: 700;
 }
 
+#competition {
+  gap: 1rem;
+}
+
+#competition p {
+  min-width: auto;
+  text-align: right;
+}
+
 .project-list {
   padding-top: 3rem;
 }
