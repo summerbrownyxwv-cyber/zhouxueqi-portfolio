@@ -5,7 +5,6 @@ import Shell from "./components/Shell.jsx";
 import EmailPage from "./pages/Email.jsx";
 import GraphicPromotionPage from "./pages/GraphicPromotion.jsx";
 import HomePage from "./pages/Home.jsx";
-import LibraryPage from "./pages/Library.jsx";
 import ProjectDetailPage from "./pages/ProjectDetail.jsx";
 import ResumePage from "./pages/Resume.jsx";
 import WorkPage from "./pages/Work.jsx";
@@ -14,7 +13,6 @@ import { projectDetailItems } from "./data/portfolioData.js";
 const routes = {
   "/": HomePage,
   "/work": WorkPage,
-  "/library": LibraryPage,
   "/03-01": GraphicPromotionPage,
   "/resume": ResumePage,
   "/email": EmailPage,
@@ -23,6 +21,7 @@ const routes = {
 function normalizePath(pathname) {
   const pathOnly = pathname.split("#")[0] || "/";
   if (pathOnly === "/index.html") return "/";
+  if (pathOnly === "/library") return "/03-01";
   if (routes[pathOnly]) return pathOnly;
   if (projectDetailItems.some((project) => project.route === pathOnly)) return pathOnly;
   return "/";
@@ -32,6 +31,10 @@ export default function App() {
   const [path, setPath] = useState(() => normalizePath(window.location.pathname));
 
   useEffect(() => {
+    if (window.location.pathname === "/library") {
+      window.history.replaceState({}, "", "/03-01");
+    }
+
     const onPopState = () => setPath(normalizePath(window.location.pathname));
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
